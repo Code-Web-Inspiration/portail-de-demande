@@ -162,11 +162,12 @@ const formReset = document.querySelector('#clear');
     verifyFields();
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-        verifyFields();
+        // e.preventDefault();
+        // verifyFields();
         
-
+        formSubmit.style.backgroundColor = "black";
         alert('formulaire envoyé');
+
     }
 
     verifyFields

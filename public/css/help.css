@@ -153,7 +153,6 @@
     font-size: .9rem;
     color: white;
     border-radius: 3px;
-    box-shadow: 0 0 6px gray;
 }
 
 /* .btn__link:hover,
@@ -162,7 +161,7 @@
 } */
 
 .btn__link:first-child {
-    background-color: rgba(3, 35, 76, .67);
+    background-color: var(--verte);
     margin-bottom: 1rem;
 }
 
