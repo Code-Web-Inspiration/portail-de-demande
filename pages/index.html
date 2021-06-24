@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>accueil</title>
+
+    <link rel="stylesheet" href="../public/css/style.css">
+    <script src="../src/app.js" defer></script>
+</head>
+<body>
+    
+    <!-- HEADER -->
+    <header class="header">
+        <nav class="header__nav">
+            <div class="nav__left">
+                <img src="../public/images/logo.png" alt="logo du site" class="logo">
+                <h3 class="client__name">Sié Coulibaly</h3>
+            </div>
+            <div class="nav__right">
+                <a href="./accueil.html" class="nav__link">accueil</a>
+                <a href="./help.html" class="nav__link">aide</a>
+            </div>
+        </nav>
+        <div class="header__caroussel">
+            <div class="caroussel">
+                <div class="img__box active" id="caroussel__item">
+                    <img src="../public/images/pexels-aleksandar-pasaric-325185.jpg" alt="" title="caroussel__image__1" />
+                </div>
+                <div class="img__box" id="caroussel__item">
+                    <img src="../public/images/pexels-sanaan-mazhar-3075993.jpg" alt="" title="caroussel__image__2" />
+                </div>
+                <div class="img__box" id="caroussel__item">
+                    <img src="../public/images/signin_img.jpg" alt="" title="caroussel__image__3" />
+                </div>
+                <div class="img__box" id="caroussel__item">
+                    <img src="../public/images/signup_img.jpg" alt="" title="caroussel__image__4" />
+                </div>
+            </div>
+            <div class="slide__btn slide__btn__left" id="slide__btn__left">
+                <span class="arrow-icons">&#60;</span>
+            </div>
+            <div class="slide__btn slide__btn__right" id="slide__btn__right">
+                <span class="arrow-icons">&#62;</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ASIDE -->
+    <aside class="aside" role="aside">
+        <p class="paragraphe paragraphe__1">
+            Vous souhaitez effectuer une demande de documents auprès du consulat de <span>xxxxxxxxx</span> ?
+        </p>
+
+        <p class="paragraphe paragraphe__2">
+            Cette plateforme vous permet de compléter en toute simplicité et télécharger automatiquement vos formulaires de demandes de documents d’état civil et consulaires.
+        </p>
+
+        <div class="aside__ccm__box">
+            <h2 class="aside__ccm">Comment ça marche ?</h2>
+
+            <ol class="aside__list">
+                <li class="list__item">Rechercher et sélectionner le document que vous souhaitez établir,</li>
+                <li class="list__item">Compléter le formulaire qui s’affichera pour le document sélectionné,</li>
+                <li class="list__item">Vérifier l’exactitude et l’exhaustivité des informations du formulaire puis valider le formulaire,</li>
+                <li class="list__item">Télécharger et imprimer la fiche de demande éditée automatiquement en PDF. Vous recevrez également cette fiche par mail. (N’hésitez pas à vérifier dans vos courriels indésirables),</li>
+                <li class="list__item">Joindre la fiche de demande imprimée avec l’ensemble des pièces justificatives demandées puis les transmettre au service concerné dans les bureaux du Consulat ou par courrier postal à l’adresse <span>xxxxxxxxxxxxxx</span>,</li>
+                <li class="list__item">Vous recevrez un mail de confirmation dès la réception des documents (fiche + pièces justificatives) et la prise en compte de votre demande par le service consulaire.</li>
+            </ol>
+        </div>
+    </aside>
+
+    <!-- MAIN -->
+     <main class="main" role="main">
+        <div class="main__cvd__box">
+            <h2 class="main__cvd">Commencez votre démarche</h2>
+
+            <div class="form__demande"> 
+                <form method="post" role="form" class="form" id="form">
+                    <div class="search__box">
+                        <div class="search__field">
+                            <input type="text" 
+                                name="search" 
+                                id="search" 
+                                placeholder="Recherchez et sélectionnez le document que vous souhaitez établir"
+                            >
+                        </div>
+                        <div class="select__field">
+                            <select name="" id="select">
+                                <option value="" selected>Musique</option>
+                                <option value="" selected>Sport</option>
+                                <option value="" selected>Theatre</option>
+                                <option value="" selected>Cinéma</option>
+                                <option value="" selected>Art et Spectacle</option>
+                                <option value="" selected>Gastronomie</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form__body">
+                        <div class="input__box">
+                            <input type="text" name="" class="field" placeholder="insert text">
+                            <span class="alert">&#10003;</span>
+                        </div>
+                        <div class="input__box">
+                            <input type="text" name="" class="field" placeholder="insert text">
+                            <span class="alert">&#10003;</span>
+                        </div>
+                        <div class="input__box">
+                            <input type="text" name="" class="field" placeholder="insert text">
+                            <span class="alert">&#10003;</span>
+                        </div>
+                        <div class="input__box">
+                            <input type="text" name="" class="field" placeholder="insert text">
+                            <span class="alert">&#10003;</span>
+                        </div>
+                        <div class="input__box">
+                            <input type="text" name="" class="field" placeholder="insert text">
+                            <span class="alert">&#10003;</span>
+                        </div>
+                        <div class="input__box">
+                            <input type="text" name="" class="field" placeholder="insert text">
+                            <span class="alert">&#10003;</span>
+                        </div>
+                        <div class="input__box">
+                            <input type="text" name="" class="field" placeholder="insert text">
+                            <span class="alert">&#10003;</span>
+                        </div>
+                        <div class="input__box">
+                            <input type="text" name="" class="field" placeholder="insert text">
+                            <span class="alert">&#10003;</span>
+                        </div>
+                        <div class="input__box">
+                            <input type="text" name="" class="field" placeholder="insert text">
+                            <span class="alert">&#10003;</span>
+                        </div>
+                        <div class="input__box">
+                            <input type="text" name="" class="field" placeholder="insert text">
+                            <span class="alert">&#10003;</span>
+                        </div>
+                        <div class="input__box">
+                            <input type="text" name="" class="field" placeholder="insert text">
+                            <span class="alert">&#10003;</span>
+                        </div>
+                        <div class="input__box">
+                            <input type="text" name="" class="field" placeholder="insert text">
+                            <span class="alert">&#10003;</span>
+                        </div>
+                    </div> 
+
+                    <div class="form__piece-a-fournir__box">
+                        <h2 class="form__piece-a-fournir__box__title">La liste des pièces à transmettre au service consulaire pour l’établissement du document :</h2>
+                        <ol class="order__list">
+                            <li class="order__list__item">Pièces 1,</li>
+                            <li class="order__list__item">Pièces 2,</li>
+                            <li class="order__list__item">Pièces 3,</li>
+                            <li class="order__list__item">Pièces 4,</li>
+                            <li class="order__list__item">Pièces 5.</li>
+                        </ol>
+                    </div>
+
+                    <div class="form__confirmation__box">
+                        <p class="form__confirmation">
+                            <label for="confirmation" class="confirmation__field">
+                                <input type="checkbox" name="" id="confirmation">
+                                Je confirme l’exactitude de mes informations
+                            </label>
+                        </p>
+
+                        <div class="form__btn__box">
+                            <input type="submit" value="VALIDER MON FORMULAIRE" id="submit" disabled>
+                            <input type="reset" value="EFFACER LES INFORMATIONS" id="clear">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <footer class="client__identifiant">johndoe.Resolv-demarches.org</footer>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__image__box">
+            <img src="../public/images/footer__image.jpg" alt="footer image">
+        </div>
+        <p class="copy">2021 Resolv-demarches - Tous droits réservés.</p>
+        <p class="infos">Nous contacter:  Resolv-demarches@gmail.org</p>
+    </footer>
+
+</body>
+</html>

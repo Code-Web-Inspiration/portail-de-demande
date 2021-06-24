@@ -1,0 +1,249 @@
+/*** GLOBALS CSS ***/
+@import './global.css';
+
+
+/*** HELP MAIN ***/
+.help__main {
+    min-height: 1px;
+    max-width: var(--container);
+    width: 100%;
+    margin: 0 auto;
+}
+
+.help__content {
+    width: inherit;
+    margin: 3rem auto;
+}
+
+/*** ASIDE STYLES ***/
+.aside {
+    position: relative;
+    width: 100%;
+    max-width: calc(100% - 4rem);
+    margin: 0 auto;
+    padding: 3rem 1rem 1rem;
+    background-color: white;
+    box-shadow: 0 0 2px gray;
+    border-radius: 3px;
+}
+
+.paragraphe {
+    font-weight: 500;
+}
+
+.paragraphe.paragraphe__1 {
+    font-size: 1.1rem;
+    color: black;
+    font-weight: 600;
+}
+
+.paragraphe.paragraphe__2 {
+    margin: .5rem 0 1rem;
+}
+
+.aside__ccm__box {
+    width: inherit;
+    margin-bottom: 2rem;
+    border: 1px solid gray;
+    border-radius: 5px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-content: center;
+    background-color: rgba(3, 35, 76, .5);
+    padding: 2rem 1rem;
+}
+
+.aside__ccm {
+    align-self: center;
+    display: inline-block;
+    padding: 1rem .5rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--bleu);
+    text-align: center;
+    color: white;
+}
+
+.aside__list {
+    width: 100%;
+    padding: .5rem;
+    color: white;
+}
+
+.list__item {
+    font-size: 1rem;
+    padding: .5rem;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: .3rem;
+    box-shadow: 0 0 2px var(--bleu);
+    border-radius: 3px;
+}
+
+.list__item img {
+    display: block;
+    height: 30px;
+    width: 30px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.list__item p {
+    font-size: .9rem;
+    font-weight: 200;
+    text-align: center;
+}
+
+.list__item p > span {
+    font-weight: 700;
+    display: inline-block;
+    margin-right: .5rem;
+    font-size: 120%;
+}
+
+
+/*** ARTICLE VIDEO YT ***/
+.article__video__yt {
+    position: relative;
+    min-height: 1px;
+    width: inherit;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+.article__video__yt video {
+    object-fit: cover;
+    object-position: center center;
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+}
+
+.btn__box {
+    width: 100%;
+    min-height: 1px;
+    margin-top: 5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap;
+}
+
+.btn__link,
+.btn__link:link {
+    display: inline-block;
+    padding: .5rem 2rem;
+    text-align: center;
+    line-height: 1.6;
+    font-weight: 700;
+    text-transform: capitalize;
+    font-size: .9rem;
+    color: white;
+    border-radius: 3px;
+    box-shadow: 0 0 6px gray;
+}
+
+/* .btn__link:hover,
+.btn__link:link:hover {
+
+} */
+
+.btn__link:first-child {
+    background-color: rgba(3, 35, 76, .67);
+    margin-bottom: 1rem;
+}
+
+.btn__link:last-child {
+    background-color: var(--orange);
+}
+
+/*** FOOTER STYLES ***/
+.footer {
+    min-height: 1px;
+    width: 100%;
+    padding: 2rem 0;
+    color: #333;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+}
+
+.footer__image__box {
+    padding: .5rem;
+    height: auto;
+    width: 200px;
+}
+
+.footer__image__box img {
+    display: block;
+}
+
+.copy, 
+.infos {
+    font-size: .9rem;
+    font-weight: 700;
+    margin-bottom: .5rem;
+}
+
+
+/*** MEDIA QUERY ***/
+@media only screen and (min-width: 640px) {
+    .help__main {
+        max-width: calc(100% - 8rem);
+    }
+
+    .btn__box {    
+        justify-content: space-between;
+        flex-flow: row nowrap;
+    }
+
+    .btn__link:first-child {
+        margin-left: 20%;
+        margin-bottom: 0;
+    }
+
+    .btn__link:last-child {
+        margin-right: 20%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    .aside__ccm {
+        align-self: flex-start;
+        text-align: left;
+    }
+
+    .aside__list {
+        width: 100%;
+        padding: .5rem 2.5rem 0;
+    }
+
+    .list__item {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .list__item img {
+        margin-bottom: 0;
+        margin-right: 2rem;
+    }
+
+    .list__item p {
+        text-align: left;
+    }
+}
+
+

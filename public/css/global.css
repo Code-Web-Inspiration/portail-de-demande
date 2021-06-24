@@ -1,0 +1,65 @@
+/*** GOOGLE FONT ***/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700&display=swap');
+
+/*** GLOBALS CSS ***/
+
+:root {
+    --container: calc(100% - 8rem);
+    --family: 'Montserrat', sans-serif;
+    --bleu: #03234c;
+    --verte: #35c926;
+    --orange: #FC5404;
+}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, 
+body {
+    font-family: var(--family, 'Arial, "Helvetica Neue", Helvetica, sans-serif');
+    font-size: 16px;
+    color: var(--bleu);
+    text-rendering: optimizeLegibility;
+    line-height: 1.4;
+}
+
+a, a:link {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+}
+
+ul, ol, li {
+    margin: 0;
+    padding: 0;
+}
+
+img, video, canvas {
+    display: block;
+    height: auto;
+    width: 100%;
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+input, .input, #input, select, .select__field {
+    outline: none;
+    border: 1px solid transparent;
+
+    box-shadow: 0 0 1px var(--bleu);
+    border-radius: 3px;
+    font-size: .9rem;
+}
+
+input:focus, .input:focus, #input:focus,  select:focus, .select__field:focus {
+    box-shadow: none;
+    border: 1px solid gray;
+}
+
+
+
+
