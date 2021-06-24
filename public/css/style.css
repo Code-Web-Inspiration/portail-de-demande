@@ -1,77 +1,10 @@
 /*** GLOBALS CSS ***/
 @import './global.css';
 
-
 /*** HEADER STYLES ***/
+@import './navbar.css';
 
-.header {
-    position: relative;
-    width: 100%;
-    padding: 2rem 0;
-}
-
-.header__nav {
-    position: relative;
-    width: inherit;
-    margin-bottom: 4rem;
-
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-
-.nav__left {
-    position: absolute;
-    top: 0;
-    left: 2rem;
-   
-    display: flex;
-    align-items: center;
-}
-
-.logo {
-    width: 80px;
-    height: auto;
-    cursor: pointer;
-    transform: scale(1);
-    transition: transform .3s ease;
-}
-.logo:hover {
-    transform: scale(1.1);
-}
-
-.client__name {
-    font-size: 1.1rem;
-    text-transform: capitalize;
-    color: inherit;
-    margin-left: 1rem;
-    font-weight: 700;
-    padding: .5rem 1rem;
-    box-shadow: 0 0 3px #333;
-    border-radius: 3px;
-}
-
-.nav__right {
-    padding: 0 2rem;
-
-    display: flex;
-    align-items: center;
-}
-
-.nav__link,
-.nav__link:link {
-    font-size: 1.0rem;
-    font-weight: 500;
-    text-transform: capitalize;
-    padding: .5rem 2rem;
-    margin: 0 5px;
-    background-color: #03234c;
-    color: white;
-    border-radius: 3px;
-}
-
-
-/*** HEADER CARROUSSEL ***/
+/*** CARROUSEL STYLES ***/
 
 .header__caroussel {
     position: relative;

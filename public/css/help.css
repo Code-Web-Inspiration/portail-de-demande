@@ -2,6 +2,9 @@
 @import './global.css';
 
 
+/*** HEADER STYLES ***/
+@import './navbar.css';
+
 /*** HELP MAIN ***/
 .help__main {
     min-height: 1px;
@@ -50,8 +53,9 @@
     display: flex;
     flex-flow: column nowrap;
     align-content: center;
-    background-color: rgba(3, 35, 76, .5);
+    background-color: var(--bleu);
     padding: 2rem 1rem;
+    color: white;
 }
 
 .aside__ccm {
@@ -81,8 +85,8 @@
     justify-content: center;
     align-items: center;
     margin-bottom: .3rem;
-    box-shadow: 0 0 2px var(--bleu);
     border-radius: 3px;
+    background-color: white;
 }
 
 .list__item img {
@@ -96,8 +100,9 @@
 
 .list__item p {
     font-size: .9rem;
-    font-weight: 200;
+    font-weight: 300;
     text-align: center;
+    color: var(--bleu)
 }
 
 .list__item p > span {
