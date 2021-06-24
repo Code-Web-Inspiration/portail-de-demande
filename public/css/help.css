@@ -8,7 +8,6 @@
 /*** HELP MAIN ***/
 .help__main {
     min-height: 1px;
-    max-width: var(--container);
     width: 100%;
     margin: 0 auto;
 }
@@ -202,9 +201,6 @@
 
 /*** MEDIA QUERY ***/
 @media only screen and (min-width: 640px) {
-    .help__main {
-        max-width: calc(100% - 8rem);
-    }
 
     .btn__box {    
         justify-content: space-between;
@@ -222,6 +218,9 @@
 }
 
 @media only screen and (min-width: 768px) {
+    .help__main {
+        max-width: var(--container);
+    }
 
     .aside__ccm {
         align-self: flex-start;

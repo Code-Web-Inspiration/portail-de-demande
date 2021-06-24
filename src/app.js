@@ -1,5 +1,7 @@
 "use strict";
 
+// DECLARATION DES VARIABLES
+
 const slider = document.querySelector('.caroussel');
 const slideItems = [].slice.call(document.querySelectorAll('.img__box'));
 const slideItemsLength = slideItems.length;
@@ -8,6 +10,7 @@ const nextBtn = document.querySelector("#slide__btn__right >  span");
 
 
 // FORMULAIRE VARIABLE
+
 const form = document.querySelector('#form');
 const formSelect = document.querySelector('#form #select');
 const fields = document.querySelectorAll('#form .field');
@@ -18,7 +21,8 @@ const formReset = document.querySelector('#clear');
 
 (() => {
 
-    let activeSlide;
+
+    // CAROUSSEL FUNCTION
     let count = 0;
 
     if (count == 0) {
@@ -104,10 +108,11 @@ const formReset = document.querySelector('#clear');
 
 
 
+    // EMITER FUNCTION
+    
     prevBtn.addEventListener('click', prevSlide);
     nextBtn.addEventListener('click', nextSlide);
     document.addEventListener('keydown', keySlide);
-
     automateSlide();
 
     slideItems.forEach (slide => {
@@ -172,6 +177,5 @@ const formReset = document.querySelector('#clear');
 
     verifyFields
     form.addEventListener('submit', handleSubmit)
-
 
 })()
