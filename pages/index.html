@@ -20,7 +20,7 @@
                 <h3 class="client__name">Sié Coulibaly</h3>
             </div>
             <div class="nav__right">
-                <a href="./accueil.html" class="nav__link">accueil</a>
+                <a href="./index.html" class="nav__link">accueil</a>
                 <a href="./help.html" class="nav__link">aide</a>
             </div>
             <div class="menu__btn__box" id="menu__btn__box">
@@ -30,16 +30,16 @@
         <div class="header__caroussel">
             <div class="caroussel">
                 <div class="img__box active" id="caroussel__item">
-                    <img src="../public/images/pexels-aleksandar-pasaric-325185.jpg" alt="" title="caroussel__image__1" />
+                    <img class="slide__img" src="../public/images/pexels-aleksandar-pasaric-325185.jpg" alt="" title="caroussel__image__1" />
                 </div>
                 <div class="img__box" id="caroussel__item">
-                    <img src="../public/images/pexels-sanaan-mazhar-3075993.jpg" alt="" title="caroussel__image__2" />
+                    <img class="slide__img" src="../public/images/pexels-sanaan-mazhar-3075993.jpg" alt="" title="caroussel__image__2" />
                 </div>
                 <div class="img__box" id="caroussel__item">
-                    <img src="../public/images/signin_img.jpg" alt="" title="caroussel__image__3" />
+                    <img class="slide__img" src="../public/images/signin_img.jpg" alt="" title="caroussel__image__3" />
                 </div>
                 <div class="img__box" id="caroussel__item">
-                    <img src="../public/images/signup_img.jpg" alt="" title="caroussel__image__4" />
+                    <img class="slide__img" src="../public/images/signup_img.jpg" alt="" title="caroussel__image__4" />
                 </div>
             </div>
             <div class="slide__btn slide__btn__left" id="slide__btn__left">
@@ -60,8 +60,38 @@
         <p class="paragraphe paragraphe__2">
             Cette plateforme vous permet de compléter en toute simplicité et télécharger automatiquement vos formulaires de demandes de documents d’état civil et consulaires.
         </p>
-
         <div class="aside__ccm__box">
+            <h2 class="aside__ccm">Comment ça marche ?</h2>
+
+            <div class="aside__list">
+                <div class="list__item">
+                    <img src="../public/images/search-interface-symbol.png" alt="">
+                    <p><span>1</span> Rechercher et sélectionner le document que vous souhaitez établir,</p>
+                </div>
+                <div class="list__item">
+                    <img src="../public/images/editer.svg" alt="">
+                    <p><span>2</span> Compléter le formulaire qui s’affichera pour le document sélectionné,</p>
+                </div>
+                <div class="list__item">
+                    <img src="../public/images/verifier.svg" alt="">
+                    <p><span>3</span> Vérifier l’exactitude et l’exhaustivité des informations du formulaire puis valider le formulaire,</p>
+                </div>
+                <div class="list__item">
+                    <img src="../public/images/telechargement-du-fichier.svg" alt="">
+                    <p><span>4</span> Télécharger et imprimer la fiche de demande éditée automatiquement en PDF. Vous recevrez également cette fiche par mail. (N’hésitez pas à vérifier dans vos courriels indésirables),</p> 
+                </div>
+                <div class="list__item">
+                    <img src="../public/images/trombone.svg" alt="">
+                    <p><span>5</span> Joindre la fiche de demande imprimée avec l’ensemble des pièces justificatives demandées puis les transmettre au service concerné dans les bureaux du Consulat ou par courrier postal à l’adresse <span>xxxxxxxxxxxxxx</span>,</p>
+                </div>
+                <div class="list__item">
+                    <img src="../public/images/envoyer.svg" alt="">
+                    <p><span>6</span> Vous recevrez un mail de confirmation dès la réception des documents (fiche + pièces justificatives) et la prise en compte de votre demande par le service consulaire.</p> 
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="aside__ccm__box">
             <h2 class="aside__ccm">Comment ça marche ?</h2>
 
             <ol class="aside__list">
@@ -72,7 +102,7 @@
                 <li class="list__item">Joindre la fiche de demande imprimée avec l’ensemble des pièces justificatives demandées puis les transmettre au service concerné dans les bureaux du Consulat ou par courrier postal à l’adresse <span>xxxxxxxxxxxxxx</span>,</li>
                 <li class="list__item">Vous recevrez un mail de confirmation dès la réception des documents (fiche + pièces justificatives) et la prise en compte de votre demande par le service consulaire.</li>
             </ol>
-        </div>
+        </div> -->
     </aside>
 
     <!-- MAIN -->
@@ -81,7 +111,7 @@
             <h2 class="main__cvd">Commencez votre démarche</h2>
 
             <div class="form__demande"> 
-                <form method="GET" role="form" class="form" id="form">
+                <form method="GET" action="" role="form" class="form" id="form">
                     <div class="search__box">
                         <div class="search__field">
                             <input type="text" 
@@ -191,6 +221,28 @@
         <p class="copy">2021 Resolv-demarches - Tous droits réservés.</p>
         <p class="infos">Nous contacter:  Resolv-demarches@gmail.org</p>
     </footer>
+
+
+    <!-- ALERT MESSAGE -->
+    <div class="msg__systeme__box" id="msg__systeme__box">
+        <div class="msg__systeme" id="msg__systeme">
+            <h2 class="msg__systeme__title">Message Système</h2>
+            <p>Votre fiche de demande de document a bien été éditée et envoyée à votre adresse <span class="client__addr">xxxxxxx@adresseMailDemandeur</span> .</p>
+            <p>Vous pouvez également la télécharger et l’imprimer en cliquant sur les boutons ci-dessous !</p>
+
+            <div class="msg__systeme__link__box">
+                <a href="#fichier-a-telecharger.pdf" download="Fichier de demande" class="msg__systeme__link">
+                    Télécharger la fiche de <br> demande édité <br> automatiquement
+                </a>
+                <a href="#formulaire" class="msg__systeme__link">
+                    Remplir un nouveau <br> formulaire
+                </a>
+                <a href="" class="msg__systeme__link">
+                    Retourner sur le site de <br> l’ambassade
+                </a>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>

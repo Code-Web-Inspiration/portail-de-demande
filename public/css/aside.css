@@ -1,0 +1,124 @@
+/*** ASIDE STYLES ***/
+
+.aside {
+    position: relative;
+    width: 100%;
+    max-width: calc(100% - 4rem);
+    margin: 0 auto;
+    padding: 3rem 1rem 1rem;
+    background-color: white;
+    box-shadow: 0 0 2px gray;
+    border-radius: 3px;
+}
+
+.paragraphe {
+    font-weight: 500;
+}
+
+.paragraphe.paragraphe__1 {
+    font-size: 1.1rem;
+    color: black;
+    font-weight: 600;
+}
+
+.paragraphe.paragraphe__2 {
+    margin: .5rem 0 1rem;
+}
+
+.aside__ccm__box {
+    width: inherit;
+    margin-bottom: 2rem;
+    border: 1px solid gray;
+    border-radius: 5px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-content: center;
+    background-color: var(--bleu);
+    padding: 2rem 1rem;
+    color: white;
+}
+
+.aside__ccm {
+    align-self: center;
+    display: inline-block;
+    padding: 1rem .5rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--bleu);
+    text-align: center;
+    color: white;
+}
+
+.aside__list {
+    width: 100%;
+    padding: .5rem;
+    color: white;
+}
+
+.list__item {
+    font-size: 1rem;
+    padding: .5rem;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: .3rem;
+    border-radius: 3px;
+    background-color: white;
+}
+
+.list__item img {
+    display: block;
+    height: 30px;
+    width: 30px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.list__item p {
+    font-size: .9rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--bleu)
+}
+
+.list__item p > span {
+    font-weight: 700;
+    display: inline-block;
+    margin-right: .5rem;
+    font-size: 120%;
+}
+
+
+@media only screen and (min-width: 768px) {
+
+    .aside__ccm {
+        align-self: flex-start;
+        text-align: left;
+    }
+
+    .aside__list {
+        width: 100%;
+        padding: .5rem 2.5rem 0;
+    }
+
+    .list__item {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .list__item img {
+        margin-bottom: 0;
+        margin-right: 2rem;
+    }
+
+    .list__item p {
+        text-align: left;
+    }
+}
