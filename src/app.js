@@ -190,7 +190,8 @@ const handleSelectedDocument = function () {
     const value = this.options[this.selectedIndex].value;
     let active = false;
 
-    if (!value || value == "defaultOption") {
+    if (!value || value === "defaultOption") {
+        fromBody.style.display = 'none';
         active = false;
         return;
     } else {
