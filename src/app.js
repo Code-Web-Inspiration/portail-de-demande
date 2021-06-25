@@ -3,11 +3,13 @@
 // DECLARATION DES VARIABLES
 
 const slider = document.querySelector('.caroussel');
-const slideItems = [].slice.call(document.querySelectorAll('.img__box'));
-const slideItemsLength = slideItems.length;
 const prevBtn = document.querySelector("#slide__btn__left >  span");
 const nextBtn = document.querySelector("#slide__btn__right >  span");
 const closeBtn = document.querySelector("#close__msg");
+
+const slideBtnContainer = [].slice.call(document.querySelectorAll(".slide__btn"));
+const slideItems = [].slice.call(document.querySelectorAll('.img__box'));
+const slideItemsLength = slideItems.length;
 
 
 // FORMULAIRE VARIABLE
@@ -152,6 +154,7 @@ const handleVerifyFields = function () {
 }
 
 
+// ============ CLOSE ELEMENTS ============
 const handleCloseBtn = function () {
     this.parentNode.parentNode.style.display = 'none';
 }
@@ -163,7 +166,7 @@ const handleResetFields = function () {
     formFields.forEach(field => {
         let alert = field.parentNode.parentNode.querySelector(".input__box .alert");
         field.value = "";
-        
+
         if (alert.classList.contains('success')) {
             alert.classList.remove('success');
         };
@@ -183,18 +186,18 @@ const handleClearFields = function () {
     formCheck.checked = false;
 }
 
-// const handleSelectedDocument = function () {
-//     const value = this.options[this.selectedIndex].value;
-//     let active = false;
+const handleSelectedDocument = function () {
+    const value = this.options[this.selectedIndex].value;
+    let active = false;
 
-//     if (!value || value == "defaultOption") {
-//         active = false;
-//         return;
-//     } else {
-//         fromBody.style.display = 'grid';
-//         fromBody.setAttribute('active', !active);
-//     }
-// }
+    if (!value || value == "defaultOption") {
+        active = false;
+        return;
+    } else {
+        fromBody.style.display = 'grid';
+        fromBody.setAttribute('active', !active);
+    }
+}
 
 
 // ============ EMITER FUNCTION ============ 
@@ -212,11 +215,23 @@ closeBtn.addEventListener('click', handleCloseBtn);
 
 
 // ============ CARROUSEL ============
+const stopSlide = window.setInterval(handleAutomateSlide, 5000);
 prevBtn.addEventListener('click', handlePrevSlide);
 nextBtn.addEventListener('click', handleNextSlide);
 document.addEventListener('keydown', handleKeySlide);
 
-const stopSlide = window.setInterval(handleAutomateSlide, 5000);
+// slideBtnContainer.forEach(slideBtn => {
+//     slideBtn.onmouseover = function () {
+//         window.clearInterval(stopSlide);
+//     };
+// })
+// prevBtn.addEventListener('mouseover', function () {
+//     window.clearInterval(stopSlide);
+// });
+// nextBtn.addEventListener('mouseover', function () {
+//     window.clearInterval(stopSlide);
+// });
+
 
 slideItems.forEach (slide => {
     let slideImg = slide.querySelector('.slide__img');
@@ -230,10 +245,9 @@ slideItems.forEach (slide => {
 })
 
 
-
 // ============ FORMULAIRE ============
 
-// formSelect.addEventListener('change', handleSelectedDocument);
+formSelect.addEventListener('change', handleSelectedDocument);
 formReset.addEventListener('click', handleClearFields)
 handleVerifyFields();
 
