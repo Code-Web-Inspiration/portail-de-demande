@@ -28,13 +28,11 @@
 .aside__ccm__box {
     width: inherit;
     margin-bottom: 2rem;
-    border: 1px solid gray;
     border-radius: 5px;
 
     display: flex;
     flex-flow: column nowrap;
     align-content: center;
-    /* background-color: var(--bleu); */
     padding: 2rem 1rem;
     color: white;
 }

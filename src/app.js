@@ -120,7 +120,7 @@ const handleVerifyFields = function () {
     formFields.forEach(field => {
     
         field.addEventListener('input', function () {
-            let alert = this.parentNode.querySelector(".input__box .alert");
+            let alert = this.parentNode.parentNode.querySelector(".input__box .alert");
              
             if(!this.value.trim()) {
                 if (alert.classList.contains('success')) {
@@ -156,6 +156,32 @@ const handleCloseBtn = function () {
     this.parentNode.parentNode.style.display = 'none';
 }
 
+
+
+// ============ RESET FIELDS ============
+const handleResetFields = function () {
+    formFields.forEach(field => {
+        let alert = field.parentNode.parentNode.querySelector(".input__box .alert");
+        field.value = "";
+        
+        if (alert.classList.contains('success')) {
+            alert.classList.remove('success');
+        };
+    });
+    formCheck.checked = false;
+}
+
+
+const handleClearFields = function () {
+    formFields.forEach(field => {
+        let alert = field.parentNode.parentNode.querySelector(".input__box .alert");
+        
+        if (alert.classList.contains('success')) {
+            alert.classList.remove('success');
+        }
+    });
+    formCheck.checked = false;
+}
 
 // const handleSelectedDocument = function () {
 //     const value = this.options[this.selectedIndex].value;
@@ -206,7 +232,11 @@ slideItems.forEach (slide => {
 
 
 // ============ FORMULAIRE ============
+
+// formSelect.addEventListener('change', handleSelectedDocument);
+formReset.addEventListener('click', handleClearFields)
 handleVerifyFields();
+
 
 form.addEventListener('submit', function (e) {
     const validate = [].slice.call(formFields).every(field => field.getAttribute('validate') === "true");
@@ -218,10 +248,11 @@ form.addEventListener('submit', function (e) {
         e.preventDefault();
         const msgConfirm = document.querySelector('#msg__systeme__box');
         msgConfirm.style.display = 'block';
-        console.log(validate);
+        
+        handleResetFields();
         return true;
     }
 });
 
 
-// formSelect.addEventListener('change', handleSelectedDocument);
+
