@@ -7,6 +7,7 @@ const slideItems = [].slice.call(document.querySelectorAll('.img__box'));
 const slideItemsLength = slideItems.length;
 const prevBtn = document.querySelector("#slide__btn__left >  span");
 const nextBtn = document.querySelector("#slide__btn__right >  span");
+const closeBtn = document.querySelector("#close__msg");
 
 
 // FORMULAIRE VARIABLE
@@ -151,7 +152,14 @@ const verifyFields = function () {
 
 
 
-// ============ EMITER FUNCTION ============    
+// ============ EMITER FUNCTION ============ 
+
+// ============ CLOSE MSG ============
+closeBtn.onclick =  function () {
+    this.parentNode.parentNode.style.display = 'none';
+}
+
+
 
 // ============ CARROUSEL ============
 prevBtn.addEventListener('click', prevSlide);
@@ -175,17 +183,15 @@ slideItems.forEach (slide => {
 verifyFields();
 
 form.addEventListener('submit', (e) => {
-    [].slice.call(fields).forEach(field => {
-        if (field.value === ""){
-            e.preventDefault();
-            console.log('invalide');
-            return false;
-        } else { 
-            e.preventDefault();
-            const msgConfirm = document.querySelector('#msg__systeme__box');
-            msgConfirm.style.display = 'block';
-            return true;
-        }
-    }) 
-    
+    const validate = [].slice.call(fields).every(field => field.getAttribute('validate') === "true");
+    if (!validate) {
+        e.preventDefault();
+        return false;
+    } else { 
+        e.preventDefault();
+        const msgConfirm = document.querySelector('#msg__systeme__box');
+        msgConfirm.style.display = 'block';
+        console.log(validate);
+        return true;
+    }
 });

@@ -54,6 +54,7 @@
 .btn__link,
 .btn__link:link {
     display: inline-block;
+    width: var(--container);
     padding: .5rem 2rem;
     text-align: center;
     line-height: 1.6;
@@ -110,26 +111,31 @@
 
 
 /*** MEDIA QUERY ***/
-@media only screen and (min-width: 640px) {
+
+@media only screen and (min-width: 768px) {
+    .help__main {
+        max-width: var(--container);
+    }
 
     .btn__box {    
         justify-content: space-between;
         flex-flow: row nowrap;
     }
 
+    .btn__link,
+    .btn__link:link {
+        width: auto;
+    }
+
     .btn__link:first-child {
         margin-left: 20%;
+        margin-right: 5px;
         margin-bottom: 0;
     }
 
     .btn__link:last-child {
         margin-right: 20%;
-    }
-}
-
-@media only screen and (min-width: 768px) {
-    .help__main {
-        max-width: var(--container);
+        margin-left: 5px;
     }
 }
 

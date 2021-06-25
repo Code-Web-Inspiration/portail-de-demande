@@ -90,19 +90,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- <div class="aside__ccm__box">
-            <h2 class="aside__ccm">Comment ça marche ?</h2>
-
-            <ol class="aside__list">
-                <li class="list__item">Rechercher et sélectionner le document que vous souhaitez établir,</li>
-                <li class="list__item">Compléter le formulaire qui s’affichera pour le document sélectionné,</li>
-                <li class="list__item">Vérifier l’exactitude et l’exhaustivité des informations du formulaire puis valider le formulaire,</li>
-                <li class="list__item">Télécharger et imprimer la fiche de demande éditée automatiquement en PDF. Vous recevrez également cette fiche par mail. (N’hésitez pas à vérifier dans vos courriels indésirables),</li>
-                <li class="list__item">Joindre la fiche de demande imprimée avec l’ensemble des pièces justificatives demandées puis les transmettre au service concerné dans les bureaux du Consulat ou par courrier postal à l’adresse <span>xxxxxxxxxxxxxx</span>,</li>
-                <li class="list__item">Vous recevrez un mail de confirmation dès la réception des documents (fiche + pièces justificatives) et la prise en compte de votre demande par le service consulaire.</li>
-            </ol>
-        </div> -->
     </aside>
 
     <!-- MAIN -->
@@ -114,11 +101,7 @@
                 <form method="GET" action="" role="form" class="form" id="form">
                     <div class="search__box">
                         <div class="search__field">
-                            <input type="text" 
-                                name="search" 
-                                id="search" 
-                                placeholder="Recherchez et sélectionnez le document que vous souhaitez établir"
-                            >
+                            <p class="search__label">Recherchez et sélectionnez le document que vous souhaitez établir :</p>
                         </div>
                         <div class="select__field">
                             <select name="" id="select">
@@ -209,8 +192,6 @@
                     </div>
                 </form>
             </div>
-
-            <footer class="client__identifiant">johndoe.Resolv-demarches.org</footer>
         </div>
     </main>
 
@@ -226,7 +207,10 @@
     <!-- ALERT MESSAGE -->
     <div class="msg__systeme__box" id="msg__systeme__box">
         <div class="msg__systeme" id="msg__systeme">
-            <h2 class="msg__systeme__title">Message Système</h2>
+            <h2 class="msg__systeme__title">
+                <img src="../public/images/checked.png" alt="icon de validation">
+            </h2>
+            <p class="msg__systeme__success">Formulaire édité avec succès !</p>
             <p>Votre fiche de demande de document a bien été éditée et envoyée à votre adresse <span class="client__addr">xxxxxxx@adresseMailDemandeur</span> .</p>
             <p>Vous pouvez également la télécharger et l’imprimer en cliquant sur les boutons ci-dessous !</p>
 
@@ -241,6 +225,8 @@
                     Retourner sur le site de <br> l’ambassade
                 </a>
             </div>
+
+            <img src="../public/images/close.png" alt="icons ferme le message" class="close__msg" id="close__msg" >
         </div>
     </div>
 
