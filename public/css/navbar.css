@@ -9,11 +9,13 @@
 .header__nav {
     position: relative;
     width: inherit;
-    margin-bottom: 4rem;
+    height: 70px;
+    margin-bottom: 3rem;
+    padding: .5rem;
 
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-end
 }
 
 .nav__left {
@@ -49,7 +51,7 @@
 
 .nav__right {
     position: absolute;
-    top: 160%;
+    top: 100%;
     right: 0;
     padding: 0 2rem;
     width: 70%;
@@ -111,6 +113,12 @@
 
 /*** MEDIA QUERY ***/
 @media only screen and (min-width: 640px) {
+
+    .header__nav {
+        height: auto;
+        margin-bottom: 6rem;
+        padding-bottom: 0;
+    }
 
     .nav__link,
     .nav__link:link {

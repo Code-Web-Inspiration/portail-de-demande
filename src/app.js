@@ -13,8 +13,9 @@ const closeBtn = document.querySelector("#close__msg");
 // FORMULAIRE VARIABLE
 
 const form = document.querySelector('#form');
+const fromBody = document.querySelector('#form__body');
 const formSelect = document.querySelector('#form #select');
-const fields = document.querySelectorAll('#form .field');
+const formFields = document.querySelectorAll('#form .field');
 const formCheck = document.querySelector('#confirmation');
 const formSubmit = document.querySelector('#submit');
 const formReset = document.querySelector('#clear');
@@ -35,7 +36,7 @@ if (count == (slideItemsLength - 1)) {
 
 
 // ============= PREVSLIDER ============
-const prevSlide = function () {
+const handlePrevSlide = function () {
     slideItems[count].classList.remove('active');
     if (count > 0) {
         count--;
@@ -55,7 +56,7 @@ const prevSlide = function () {
 }
 
 // ============= NEXTSLIDER ============
-const nextSlide = function () {
+const handleNextSlide = function () {
     slideItems[count].classList.remove('active');
     if (count < (slideItemsLength - 1)) {
         count++;
@@ -75,7 +76,7 @@ const nextSlide = function () {
 
 
 // ============ KEYSLIDER ===============
-const keySlide = function (e) {
+const handleKeySlide = function (e) {
     if (e.keyCode == '37') {
         prevSlide();
     }
@@ -87,7 +88,7 @@ const keySlide = function (e) {
 
 
 // ============ AUTOMATESLIDER =============
-const automateSlide = function () {
+const handleAutomateSlide = function () {
     if (slideItems[count].classList.contains('active')) {
         slideItems[count].classList.remove('active');
     }
@@ -113,18 +114,19 @@ const automateSlide = function () {
 
 
 // ============ VERIFIE FIELDS =============
-const verifyFields = function () {
+const handleVerifyFields = function () {
     let valide = false;
 
-    fields.forEach(field => {
+    formFields.forEach(field => {
     
         field.addEventListener('input', function () {
-            let alert = field.parentNode.querySelector(".input__box .alert");
+            let alert = this.parentNode.querySelector(".input__box .alert");
              
             if(!this.value.trim()) {
                 if (alert.classList.contains('success')) {
                     alert.classList.remove('success');
                 }
+                alert.classList.remove('success');
                 this.setAttribute("validate", valide);
                 return;
             } else if (this.value.trim() && this.value.trim().length < 5) {
@@ -150,40 +152,65 @@ const verifyFields = function () {
 }
 
 
-
-
-// ============ EMITER FUNCTION ============ 
-
-// ============ CLOSE MSG ============
-closeBtn.onclick =  function () {
+const handleCloseBtn = function () {
     this.parentNode.parentNode.style.display = 'none';
 }
 
 
+// const handleSelectedDocument = function () {
+//     const value = this.options[this.selectedIndex].value;
+//     let active = false;
+
+//     if (!value || value == "defaultOption") {
+//         active = false;
+//         return;
+//     } else {
+//         fromBody.style.display = 'grid';
+//         fromBody.setAttribute('active', !active);
+//     }
+// }
+
+
+// ============ EMITER FUNCTION ============ 
+
+
+
+
+
+
+
+
+
+// ============ CLOSE MSG ============
+closeBtn.addEventListener('click', handleCloseBtn);
+
 
 // ============ CARROUSEL ============
-prevBtn.addEventListener('click', prevSlide);
-nextBtn.addEventListener('click', nextSlide);
-document.addEventListener('keydown', keySlide);
+prevBtn.addEventListener('click', handlePrevSlide);
+nextBtn.addEventListener('click', handleNextSlide);
+document.addEventListener('keydown', handleKeySlide);
 
+const stopSlide = window.setInterval(handleAutomateSlide, 5000);
 
-const stopSlide = window.setInterval(automateSlide, 5000);
 slideItems.forEach (slide => {
     let slideImg = slide.querySelector('.slide__img');
+
     slideImg.onmouseover =  function () {
         window.clearInterval(stopSlide);
     } 
-
-    slideImg.onmouseout = () => window.setInterval(automateSlide, 5000);
+    slideImg.onmouseout = function () {
+        window.setInterval(handleAutomateSlide, 5000);
+    }
 })
 
 
 
 // ============ FORMULAIRE ============
-verifyFields();
+handleVerifyFields();
 
-form.addEventListener('submit', (e) => {
-    const validate = [].slice.call(fields).every(field => field.getAttribute('validate') === "true");
+form.addEventListener('submit', function (e) {
+    const validate = [].slice.call(formFields).every(field => field.getAttribute('validate') === "true");
+
     if (!validate) {
         e.preventDefault();
         return false;
@@ -195,3 +222,6 @@ form.addEventListener('submit', (e) => {
         return true;
     }
 });
+
+
+// formSelect.addEventListener('change', handleSelectedDocument);
