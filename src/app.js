@@ -42,16 +42,21 @@ const handlePrevSlide = function () {
     slideItems[count].classList.remove('active');
     if (count > 0) {
         count--;
+        prevBtn.style.display = 'inline-block';
         nextBtn.style.display = 'inline-block';
-        console.log(count)
     
         if (count === 0) {
-            prevBtn.style.display = 'none';
+            prevBtn.style.display = 'none'; 
+            nextBtn.style.display = 'inline-block';
+        } else if (count === (slideItemsLength - 1)) { 
+            prevBtn.style.display = 'none'; 
+            nextBtn.style.display = 'inline-block';
         }
         
     } else {
         count = (slideItemsLength - 1);
         nextBtn.style.display = 'none';
+        prevBtn.style.display = 'inline-block';
     }
 
     slideItems[count].classList.add('active');
@@ -60,17 +65,24 @@ const handlePrevSlide = function () {
 // ============= NEXTSLIDER ============
 const handleNextSlide = function () {
     slideItems[count].classList.remove('active');
+
     if (count < (slideItemsLength - 1)) {
         count++;
         prevBtn.style.display = 'inline-block';
+        nextBtn.style.display = 'inline-block';
 
         if (count === (slideItemsLength - 1)) {
-            nextBtn.style.display = 'none';
-        } 
+            nextBtn.style.display = 'none'; 
+            prevBtn.style.display = 'inline-block';
+        } else if (count === 0) { 
+            prevBtn.style.display = 'none'; 
+            nextBtn.style.display = 'inline-block';
+        }
         
     } else {
         count = 0;
         prevBtn.style.display = 'none';
+        nextBtn.style.display = 'inline-block';
     }
 
     slideItems[count].classList.add('active');
@@ -91,6 +103,7 @@ const handleKeySlide = function (e) {
 
 // ============ AUTOMATESLIDER =============
 const handleAutomateSlide = function () {
+
     if (slideItems[count].classList.contains('active')) {
         slideItems[count].classList.remove('active');
     }
@@ -98,9 +111,14 @@ const handleAutomateSlide = function () {
     if (count < (slideItemsLength - 1)) {
         count++;
         prevBtn.style.display = 'inline-block';
+        nextBtn.style.display = 'inline-block';
 
         if (count === (slideItemsLength - 1)) {
-            nextBtn.style.display = 'none';
+            nextBtn.style.display = 'none'; 
+            prevBtn.style.display = 'inline-block';
+        } else if (count === 0) { 
+            prevBtn.style.display = 'none'; 
+            nextBtn.style.display = 'inline-block';
         }
 
     } else {
@@ -112,7 +130,6 @@ const handleAutomateSlide = function () {
     slideItems[count].classList.add('active');
 
 }
-
 
 
 // ============ VERIFIE FIELDS =============
@@ -160,7 +177,6 @@ const handleCloseBtn = function () {
 }
 
 
-
 // ============ RESET FIELDS ============
 const handleResetFields = function () {
     formFields.forEach(field => {
@@ -173,7 +189,6 @@ const handleResetFields = function () {
     });
     formCheck.checked = false;
 }
-
 
 const handleClearFields = function () {
     formFields.forEach(field => {
@@ -201,16 +216,6 @@ const handleSelectedDocument = function () {
 }
 
 
-// ============ EMITER FUNCTION ============ 
-
-
-
-
-
-
-
-
-
 // ============ CLOSE MSG ============
 closeBtn.addEventListener('click', handleCloseBtn);
 
@@ -220,30 +225,6 @@ const stopSlide = window.setInterval(handleAutomateSlide, 5000);
 prevBtn.addEventListener('click', handlePrevSlide);
 nextBtn.addEventListener('click', handleNextSlide);
 document.addEventListener('keydown', handleKeySlide);
-
-// slideBtnContainer.forEach(slideBtn => {
-//     slideBtn.onmouseover = function () {
-//         window.clearInterval(stopSlide);
-//     };
-// })
-// prevBtn.addEventListener('mouseover', function () {
-//     window.clearInterval(stopSlide);
-// });
-// nextBtn.addEventListener('mouseover', function () {
-//     window.clearInterval(stopSlide);
-// });
-
-
-slideItems.forEach (slide => {
-    let slideImg = slide.querySelector('.slide__img');
-
-    slideImg.onmouseover =  function () {
-        window.clearInterval(stopSlide);
-    } 
-    slideImg.onmouseout = function () {
-        window.setInterval(handleAutomateSlide, 5000);
-    }
-})
 
 
 // ============ FORMULAIRE ============
@@ -268,6 +249,4 @@ form.addEventListener('submit', function (e) {
         return true;
     }
 });
-
-
 

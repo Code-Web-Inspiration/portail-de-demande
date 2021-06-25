@@ -23,7 +23,6 @@ const hideMenu = function () {
 
 
 // // EMITER FUNCTION
-
 window.addEventListener('resize', hideMenu);
 menuBtn.addEventListener('click', showMenu);
 

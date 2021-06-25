@@ -65,11 +65,6 @@
     border-radius: 3px;
 }
 
-/* .btn__link:hover,
-.btn__link:link:hover {
-
-} */
-
 .btn__link:first-child {
     background-color: var(--verte);
     margin-bottom: 1rem;

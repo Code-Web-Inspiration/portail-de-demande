@@ -10,7 +10,6 @@
 
 
 /*** CARROUSEL STYLES ***/
-
 .header__caroussel {
     position: relative;
     max-width: calc(100% - 4rem);
@@ -354,11 +353,13 @@
 .footer__image__box {
     padding: .5rem;
     height: auto;
-    width: 200px;
 }
 
 .footer__image__box img {
     display: block;
+    width: 185px;
+    height: 140px;
+    object-fit: cover;
 }
 
 .infos {
